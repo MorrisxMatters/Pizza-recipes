@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Ingredienti Pizza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Calcolatore Ingredienti Pizza</h1>
+            <p>Calcola le quantità esatte per il tuo impasto perfetto</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Parametri dell'Impasto</h2>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label for="people" class="form-label">Numero di Persone</label>
+                            <div class="number-input">
+                                <button type="button" class="btn btn--outline btn--sm" id="decreasePeople" aria-label="Diminuisci persone">-</button>
+                                <input type="number" id="people" class="form-control number-display" value="2" min="1" max="20" readonly>
+                                <button type="button" class="btn btn--outline btn--sm" id="increasePeople" aria-label="Aumenta persone">+</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hydration" class="form-label">
+                                Idratazione: <span id="hydrationValue">60</span>%
+                            </label>
+                            <input type="range" id="hydration" class="range-slider" min="50" max="80" value="60" step="1">
+                            <div class="range-labels">
+                                <span>50%</span>
+                                <span>80%</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hours" class="form-label">Ore di Lievitazione</label>
+                            <input type="number" id="hours" class="form-control" value="24" min="1" max="72" step="0.5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Ingredienti Necessari</h2>
+                    </div>
+                    <div class="card__body">
+                        <div class="ingredients-table">
+                            <div class="ingredient-row ingredient-header">
+                                <div class="ingredient-name">Ingrediente</div>
+                                <div class="ingredient-amount">Quantità (g)</div>
+                                <div class="ingredient-percent">% sulla Farina</div>
+                            </div>
+                            
+                            <div class="ingredient-row flour-row">
+                                <div class="ingredient-name">
+                                    <span class="ingredient-icon">🌾</span>
+                                    Farina
+                                </div>
+                                <div class="ingredient-amount" id="flourAmount">280.0</div>
+                                <div class="ingredient-percent">100.0%</div>
+                            </div>
+                            
+                            <div class="ingredient-row">
+                                <div class="ingredient-name">
+                                    <span class="ingredient-icon">💧</span>
+                                    Acqua
+                                </div>
+                                <div class="ingredient-amount" id="waterAmount">168.0</div>
+                                <div class="ingredient-percent" id="waterPercent">60.0%</div>
+                            </div>
+                            
+                            <div class="ingredient-row">
+                                <div class="ingredient-name">
+                                    <span class="ingredient-icon">🦠</span>
+                                    Lievito
+                                </div>
+                                <div class="ingredient-amount" id="yeastAmount">0.75</div>
+                                <div class="ingredient-percent" id="yeastPercent">0.27%</div>
+                            </div>
+                            
+                            <div class="ingredient-row">
+                                <div class="ingredient-name">
+                                    <span class="ingredient-icon">🍯</span>
+                                    Malto
+                                </div>
+                                <div class="ingredient-amount" id="maltAmount">1.5</div>
+                                <div class="ingredient-percent" id="maltPercent">0.54%</div>
+                            </div>
+                            
+                            <div class="ingredient-row">
+                                <div class="ingredient-name">
+                                    <span class="ingredient-icon">🧂</span>
+                                    Sale
+                                </div>
+                                <div class="ingredient-amount" id="saltAmount">1.5</div>
+                                <div class="ingredient-percent" id="saltPercent">0.54%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="total-weight">
+                            <strong>Peso Totale Impasto: <span id="totalWeight">451.75</span>g</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Formule tradizionali italiane per pizza perfetta</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
